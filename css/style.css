@@ -1,0 +1,294 @@
+@font-face {
+  font-family:'p5hatty';
+  src:url('assets/p5hatty.ttf') format('truetype'),
+      url('assets/p5hatty.woff') format('woff'),
+      url('assets/p5hatty.woff2') format('woff2');
+  font-style:normal;
+  font-weight:100;
+}
+
+/* the entire page uses the Persona 5 font */
+* {
+  font-family:'p5hatty', sans-serif;
+}
+
+/* the body of the entire page */
+body{
+  background-color:#000;
+  margin:0;
+}
+
+/* used for the showcase and About Me */
+.container{
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+}
+
+/* the main header which is fixed on the page, contains the navigation bar */
+#main-header{
+  /* style and colors */
+  /* the color of the header goes through a rainbow gradient */
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800% 1800%;
+  color:#fff;
+
+  /* positioning */
+  position:fixed;
+  height:75px;
+  width:100%;
+
+  /* animations for the rainbow gradient */
+  -webkit-animation: rainbow 18s ease infinite;
+  -moz-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+/* for the text links (About and Projects) on the main header */
+#main-header a{
+  /* style and colors */
+  color: #fff;
+
+  /* positioning */
+  padding: 10px 0px;
+
+  /* text formatting */
+  text-decoration: none;
+  font-size:36px;
+  line-height: 2em;
+}
+
+/* every link in the navigation bar is evenly spaced, and glows when hovered over */
+.navigation {
+  display:flex;
+  justify-content:space-around;
+}
+
+.navlink:hover {
+  filter: drop-shadow(0px 0px 10px white);
+}
+
+#showcase{
+  /* image */
+  background-size:auto 100%;
+  background-position:center;
+  background-repeat:no-repeat;
+  backface-visibility: hidden;
+
+  /* initial image */
+  background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg');
+
+  /* slideshow animation for three pictures */
+  animation: slideshow 24s ease-in-out infinite 1s;
+  -webkit-animation: slideshow 24s ease-in-out infinite 1s;
+  -moz-animation: slideshow 24s ease-in-out infinite 1s;
+  -o-animation: slideshow 24s ease-in-out infinite 1s;
+
+  /* positioning */
+  min-height:730px;
+
+  /* text formatting, this centers the button as well */
+  text-align:center;
+}
+
+@keyframes slideshow {
+  0%, 100% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg'); }
+  33.3% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/grandcanyon.jpg'); }
+  66.6% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/piano.jpg'); }
+}
+@-webkit-keyframes slideshow {
+  0%, 100% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg'); }
+  33.3% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/grandcanyon.jpg'); }
+  66.6% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/piano.jpg'); }
+}
+@-moz-keyframes slideshow {
+  0%, 100% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg'); }
+  33.3% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/grandcanyon.jpg'); }
+  66.6% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/piano.jpg'); }
+}
+@-o-keyframes slideshow {
+  0%, 100% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg'); }
+  33.3% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/grandcanyon.jpg'); }
+  66.6% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/piano.jpg'); }
+}
+
+#showcase h3{
+  /* style and colors */
+  color:#fff;
+
+  /* text formatting */
+  font-family: 'Audiowide', cursive;
+  font-size:25px;
+  line-height: 1.6em;
+}
+
+#logo {
+  margin-top:150px;
+  width: 50%;
+}
+
+/* This button is the Download Resume button. */
+.button {
+  /* style and colors */
+  background-color:#333;
+  color:#fff;
+  border:none;
+
+  /* positioning */
+  padding:5px 15px;
+
+  /* text formatting */
+  font-size:25px;
+  text-decoration:none;
+}
+
+.button:hover{
+  /* style and colors */
+  background:red;
+  color:#fff;
+}
+
+/* Next two components are part of my container for About Me. */
+#about-me{
+  /* style and colors */
+  border:5px #fff solid;
+  background:#000;
+  color:#fff;
+
+  /* positioning */
+  margin-top:30px;
+  float:left;
+  width:70%;
+  padding:0px 30px;
+  box-sizing: border-box;
+
+  /* text formatting */
+  font-size:24px;
+  line-height:1em;
+}
+
+#avi {
+  /* style and colors */
+  border:3px #fff solid;
+
+  /* positioning */
+  margin-top:30px;
+  float:right;
+  width:200px;
+}
+
+#projects {
+  /* style and colors */
+  background: #222;
+  color: #fff;
+
+  /* positioning */
+  margin-top:40px;
+  padding:10px;
+
+  /* text formatting */
+  font-size:24px;
+}
+
+/* Flexbox display to get the project icons and descriptions next to each other */
+/* align-items is used so that the project icons can remain on top */
+.project-container{
+  display:flex;
+  align-items:flex-start;
+}
+
+/* The center text that just says "My Projects" */
+#projects h1 {
+  text-align:center;
+}
+
+/* Padding the project descriptions so they don't go all the way to the right */
+#projects p {
+  padding-right:30px;
+}
+
+/* Padding the icon of the project, which links to the project webpage. */
+.project-icon {
+  padding: 10px 30px;
+}
+
+.project-icon:hover{
+  filter: drop-shadow(0px 0px 10px white);
+}
+
+/* Clicking the title of the project also leads to the webpage for that project. */
+.project-link {
+  text-decoration:none;
+  color:#39ff14;
+}
+
+.project-link:hover {
+  color:#90ee90;
+}
+
+.ext-link{
+  color:#40e0d0;
+}
+
+.ext-link:visited{
+  color:#ff00ff;
+}
+
+#main-footer{
+  /* style and colors */
+  background: #333;
+  color:#fff;
+
+  /* positioning */
+  padding:10px;
+
+  /* text formatting */
+  text-align: center;
+  font-size:24px;
+}
+
+/* Media query to fix some section sizes as the screen gets smaller, or for mobile views */
+@media(max-width:1000px) {
+  #showcase {
+    min-height:100px;
+  }
+  #showcase h3 {
+    font-size:18px;
+  }
+  #logo {
+    margin-top:100px;
+    width:70%;
+  }
+  #about-me{
+    width:100%;
+    float:none;
+  }
+  #avi{
+    float:left;
+  }
+  #projects li{
+    padding-right:30px;
+  }
+}

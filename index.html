@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Andrew Le</title>
+    <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+
+  <body>
+    <header id="main-header">
+      <div class="navigation">
+        <a class="navlink" href="#showcase">
+          <img src="images/logo.png" alt="" width=100>
+        </a>
+        <a class="navlink" href="#about-me">About</a>
+        <a class="navlink" href="#projects">Projects</a>
+        <a class="navlink" href="https://github.com/elydna" target="_blank">
+          <img src="images/github.jpg" alt="" width=35>
+        </a>
+        <a class="navlink" href="https://www.linkedin.com/in/andrewandyle/" target="_blank">
+          <img src="images/linkedin.png" alt="" width=35>
+        </a>
+      </div>
+    </header>
+
+    <section id="showcase">
+      <div class="container">
+        <img id="logo" src="images/logo.png" alt="" width=500>
+        <h3>UT Austin Computer Science '21 - Web/Mobile Development</h3>
+        <a class="button" href="resume.pdf" target="_blank">Download Resume</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <section id="about-me">
+        <h1>About Andrew Le</h1>
+
+        <p>As my programming knowledge is expanding through my studies in UTCS and self-teaching, I've enjoyed my experiences creating a variety of programs using different technologies. I seek opportunities to challenge myself and expand my skillset, and I am excited to explore my potential of how I can make an impact through computer science, whether it be through software engineering, data science, machine learning, or something else. I'm open to the many possibilities in this field and am excited about how they could change our future.</p>
+
+        <p>I'm driven to develop projects meant for a cause, to solve problems, or to enhance the quality of life of a target audience. I'm always open to feedback and criticism on my work to figure out how I can improve, and I observe the impact of my work to see what kinds of additional features users could benefit from.</p>
+
+        <p>Aside from programming, I spend my free time playing strategy games and participating in community service and long-term community projects. I have played the piano for over 10 years, playing in a duo with my best friend at school performances, or at events such as my sister's wedding. I've also gained experience in editing videos using editing software such as Sony Vegas for projects and for fun.</p>
+      </section>
+      <img id="avi" src="images/avi.jpg" alt="My Picture">
+    </div>
+
+    <section id="projects">
+      <h1>My Projects</h1>
+
+      <div class="project-container">
+        <a class="project-icon" href="#">
+          <img src="images/tt-legendary.png" alt="" width=50>
+        </a>
+        <div class="project-description">
+          <a class="project-link" href="#">
+            <h2>Clash Royale Trade Helper Bot</h2>
+          </a>
+          <p>A Discord web-scraping bot that uses endpoints from <a class="ext-link" href="https://docs.royaleapi.com/#/">RoyaleAPI</a> to show players' card quantities in the mobile game Clash Royale. Discord users can input various commands (who has or who wants a card, which cards of a certain player are tradable), create a wishlist of cards they want, and display a list of smart trade results based on everyone's wishlists.</p>
+          <p>The bot was initially created using Java, with a MySQL backend to map Discord users to their player tags (using Hibernate) so their player information can be retrieved through HTTP requests. Wishlists were stored in a local directory as JSON files.</p>
+          <p>My main contributions to this bot included:
+            <ul>
+              <li>Using HashMaps and functional programming to change the display of smart trade results to show in the order of frequency of possible trades</li>
+              <li>Filtering the smart trade list down to giving away only cards that the player has maxed</li>
+              <li>Creating a priority system using a new JSON field to allow users to indicate which card they wanted most, so smart trade results would only show prioritized wishes, narrowing down options to be more accurate for a higher trade success rate</li>
+              <li>Allowing the whoWants command to accept a rarity parameter, to show a list of which players want every card of that rarity</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+      <div class="project-container">
+        <a class="project-icon" href="#">
+          <img src="images/android_logo.png" alt="" width=50>
+        </a>
+        <div class="project-description">
+          <a class="project-link" href="#">
+            <h2>CodePath Android University</h2>
+          </a>
+          <p>A series of Android Java applications created using Android Studio through a remote class on <a class="ext-link" href="https://codepath.org/">CodePath</a>. These apps included a Flixster app that showed the most popular movies that are now playing, as well as Twitter and Instagram clone apps. The Flixster and Twitter apps used an API to retrieve data, while the Instagram app used a Parse backend to store users and posts.</p>
+          <p>This remote class taught students the fundamentals of creating Android apps, including:
+            <ul>
+              <li>How to change the layout of activities/fragments to improve the UI</li>
+              <li>Creating a RecyclerView and using an adapter to populate it with data</li>
+              <li>Using intents to navigate between activities and pass data through them</li>
+              <li>Using get and post requests to compose and submit posts, and to refresh the feed/timeline</li>
+              <li>Setting up an authentication system for accounts, and persisting logged in accounts and data offline</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <footer id="main-footer">
+      <p>&copy; 2019-2020 Andrew Le. <a class="ext-link" href="https://www.youtube.com/watch?v=6B90DMr-OBY">Link for Persona 5 font.</a></p>
+    </footer>
+
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
