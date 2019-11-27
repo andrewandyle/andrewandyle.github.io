@@ -1,8 +1,12 @@
 @font-face {
   font-family:'p5hatty';
-  src:url('assets/p5hatty.ttf') format('truetype'),
-      url('assets/p5hatty.woff') format('woff'),
-      url('assets/p5hatty.woff2') format('woff2');
+  src: url("assets/p5hatty.eot"); /* IE9 Compat Modes */
+  src: url("assets/p5hatty.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+       url("assets/p5hatty.otf") format("opentype"), /* Open Type Font */
+       url("assets/p5hatty.svg") format("svg"), /* Legacy iOS */
+       url("assets/p5hatty.ttf") format("truetype"), /* Safari, Android, iOS */
+       url("assets/p5hatty.woff") format("woff"), /* Modern Browsers */
+       url("assets/p5hatty.woff2") format("woff2"); /* Modern Browsers */
   font-style:normal;
   font-weight:100;
 }
@@ -101,10 +105,10 @@ body{
   background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg');
 
   /* slideshow animation for three pictures */
-  animation: slideshow 24s ease-in-out infinite 1s;
-  -webkit-animation: slideshow 24s ease-in-out infinite 1s;
-  -moz-animation: slideshow 24s ease-in-out infinite 1s;
-  -o-animation: slideshow 24s ease-in-out infinite 1s;
+  animation: slideshow 24s ease-in-out infinite 0.5s;
+  -webkit-animation: slideshow 24s ease-in-out infinite 0.5s;
+  -moz-animation: slideshow 24s ease-in-out infinite 0.5s;
+  -o-animation: slideshow 24s ease-in-out infinite 0.5s;
 
   /* positioning */
   min-height:730px;
