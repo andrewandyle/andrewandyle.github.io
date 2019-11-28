@@ -209,6 +209,9 @@ h4 {
 }
 
 @media(max-width:1000px) {
+  #table-of-contents {
+    width:80%;
+  }
   .container img:not(.card-icon) {
     width:90%;
   }
