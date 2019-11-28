@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clash Royale Trade Helper Bot</title>
+    <link rel="stylesheet" type="text/css" href="css/cr-style.css">
+  </head>
+
+  <body>
+    <header id="main-header">
+      <div class="navigation">
+        <a class="navlink" href="index.html#showcase">
+          <img src="images/logo.png" alt="" width=100>
+        </a>
+        <a class="navlink" href="index.html#about-me">About</a>
+        <a class="navlink" href="index.html#projects">Projects</a>
+        <a class="navlink" href="https://github.com/elydna" target="_blank">
+          <img src="images/github.jpg" alt="" width=35>
+        </a>
+        <a class="navlink" href="https://www.linkedin.com/in/andrewandyle/" target="_blank">
+          <img src="images/linkedin.png" alt="" width=35>
+        </a>
+      </div>
+    </header>
+
+    <section id="top">
+      <div class="container">
+        <img id="logo" src="images/cr-trade-bot/clash-royale-logo.png" alt="Clash Royale">
+        <h1>Trade Helper Bot</h1>
+        <h2>Created by Eitri Ymir</h2>
+        <img src="images/cr-trade-bot/trade-tokens.png" alt="Trade Tokens" width=250>
+      </div>
+    </section>
+
+    <section id="table-of-contents">
+      <div class="container">
+        <p>NOTE: I am not the owner of this bot. All credit goes to Eitri Ymir. I am only explaining the bot's functions and my contributions, and since the GitHub repo is private, I won't be sharing any code.</p>
+        <h1>Table of Contents</h1>
+        <ol>
+          <li>Introduction</li>
+          <ol>
+            <li>What are trades?</li>
+            <li>Issues</li>
+            <li>Solution</li>
+          </ol>
+          <li>Commands</li>
+          <ol>
+            <li>saveTag</li>
+            <li>whoHas</li>
+            <li>wl, awl, rwl (Wish List Commands)</li>
+            <li>whoWants</li>
+            <li>whoTakes</li>
+            <li>findMeTrades</li>
+            <li>myTradableCards</li>
+            <li>maxedCards</li>
+          </ol>
+          <li>My Features/Changes</li>
+          <ol>
+            <li>Priority System</li>
+            <li>Truncated fmt view by frequency</li>
+            <li>Filtering fmt by your maxed cards</li>
+            <li>Displaying wishes in the clan by rarity</li>
+          </ol>
+        </ol>
+      </div>
+    </section>
+
+    <div class="container">
+      <section id="introduction">
+        <h1>1. Introduction</h1>
+        <h4>1.1. What are trades?</h4>
+        <p>For those of you who don't know the mobile game Clash Royale, I will keep this short.</p>
+        <p>In Clash Royale, players battle each other in a 1v1 setting to destroy each other's towers. They make decks composed of troops, spells, and/or buildings, which are represented by cards. Players collect cards to level them up to the max level (13).</p>
+        <p>There are four rarities of cards in the game, by increasing difficulty to obtain: Common, Rare, Epic, and Legendary.</p>
+        <p id="token-explanation">Recently, an update in Clash Royale introduced Trade Tokens, in which players can trade cards of the same rarity with each other. Both players must have a trade token of the same rarity. The tradable quantities are: 250 Commons, 50 Rares, 10 Epics, and 1 Legendary. And if a player has a card maxed, they can infinitely give that card at the cost of gold!</p>
+      </section>
+      <img id="trade-tokens" src="images/cr-trade-bot/trade-tokens.jpg" alt="Trade Tokens">
+      <div class="pictures">
+        <img id="example1" src="images/cr-trade-bot/trade-example1.png" alt="Trade Example 1" width=250>
+        <img id="example2" src="images/cr-trade-bot/trade-example2.png" alt="Trade Example 2" width=250>
+        <img id="example3" src="images/cr-trade-bot/trade-example3.png" alt="Trade Example 3" width=250>
+      </div>
+
+      <section id="issues">
+        <p>Above are some examples of completed trades.</p>
+        <h4>1.2. Issues</h4>
+        <p>In order for trade tokens to be used, other people have to find the offers appealing. Since both sides of each trade require a token, they need to be mutually beneficial. Communication plays a huge role in the success of trades.</p>
+        <p>However, that is difficult when players only decide to post trades, offering just the cards they want to get rid of. What if the cards they offered aren't cards that anybody wants? Then those trades sit there in chat and never get accepted, and nobody wins.</p>
+        <p>People often do what's called a counter offer: they see an existing trade from a player, and offer what that player wants for another card that they want that wasn't offered. Sure, that may be effective sometimes, but sometimes that player doesn't have enough of that card to trade, or that he's holding onto that card too!</p>
+        <p>Normally, all people can do in the chat is ask players if they have enough of a certain card to trade. You can't see everyone's card collections in-game, so there's no way of telling who has enough of what card to trade. This leads to more issues when it comes to communication, because sometimes the players being asked won't be online to answer that!</p>
+        <p>Also, some cards in this game are so popular that many people are requesting them, and there are very few people who would give it away in a trade. Requesting popular cards in trades could go nowhere, no matter how many times you decide to repost them if they fail.</p>
+      </section>
+
+      <section id="solution">
+        <h4>1.3. Solution</h4>
+        <p>Even though you can't see people's card collections in-game, there exists a public source that displays real-time information about player and clan data. This is a REST API called RoyaleAPI. In this API, you can navigate to each player's profile and look at their card collection. As an example, <a class="ext-link" href="https://royaleapi.com/player/LCGQQJ9L/cards/levels" target="_blank">here's my card collection.</a> You can even sort the cards by "Trade" to see how many times I can trade away each card!</p>
+        <p>But is the solution really telling my entire clan to look online and find out who in the clan has the card they want? Clans can have up to 50 players. Looking through 50 players' card collections can be time consuming!</p>
+        <p>Fortunately, RoyaleAPI allows developers to access their API endpoints to obtain the real-time data, which includes accessing every player in a clan, and how many of each card each player has. The data obtained is returned in JSON, which we can then parse to get and display the card information we need. <a class="ext-link" href="https://docs.royaleapi.com/" target="_blank">More information can be found in their documentation.</a></p>
+        <p>That leads to the creation of this bot. A clanmate of mine, Eitri Ymir (who goes by the in-game name Gleipnir), decided to create a bot using Java for our clan's Discord server. This bot allows players to enter commands in the Discord channel to find out who in the clan has a certain card, indicated by a parameter. The bot then web-scrapes from RoyaleAPI and sends back a list of all players in a neat display.</p>
+      </section>
+
+      <section id="commands">
+        <h1>2. Commands</h1>
+        <h4>2.1. saveTag</h4>
+        <p>In Clash Royale, every player has an identifier known as a player tag. How will the bot know which clan its searching in? This is the main purpose of the MySQL backend: when a player runs the saveTag command followed by their player tag, the player's Discord account is mapped to that player tag. That way, when any command comes from this user, the tag will be used to identify the clan the player is in so that the data returned is from all other players in that clan. For this reason, every command verifies that the user has a tag saved.</p>
+        <p>Here is an example, with me saving my player tag to my Discord account:</p>
+        <img src="images/cr-trade-bot/save.png" alt="saveTag" width=600>
+        <p>My clan is Veni Vidi Vici (#9LPRGP9). The next time I call any command, it will find the clan associated with my player tag, and then go through the profiles of every other player in my clan.</p>
+
+        <h4>2.2. whoHas</h4>
+        <p>This is the most important function of the bot: to display who has any card.</p>
+        <p>When a player runs the whoHas command followed by the card they want, the bot will search through every player in the clan. If a clanmate has enough tradable cards (depending on the rarity), then they will show up on the resulting list. Their name will be green if it isn't on their wish list, and red otherwise (indicating that they will not trade away that card). So, people in the clan can simply run this command and ask anyone who has a green name if they want to trade!</p>
+        <p>Here is an example with the newest card, <img class="card-icon" src="images/cr-trade-bot/card-icons/elixir-golem.png" alt=""> Elixir Golem, which not many people in the clan have.</p>
+        <img src="images/cr-trade-bot/who-has.png" alt="whoHas" width=500>
+        <p>NOTE: You may see that I'm running this on a local copy of the bot and I've added a player tag as a parameter. This version of the bot is used to test important changes and is exclusively used by me, so there is no need for a database.</p>
+
+        <h4>2.3. wl, awl, rwl (Wish List Commands)</h4>
+        <p>So how do we know which players want to obtain a certain card? This bot allows players to form wish lists, adding the cards that they want to obtain or save up, to make communication even clearer! Each wish list is connected to a player, stored locally in JSON files.</p>
+        <p>The commands are: awl (adding a card to a wish list), rwl (removing a card from a wish list), and wl (viewing your own or someone else's wishlist).</p>
+        <img src="images/cr-trade-bot/wishlist.png" alt="wishlist" width=600>
+        <p>As shown in whoHas, anyone who has the requested card in their wishlist will be marked as red. This makes player-to-player communication much easier because you won't be asking from people who you know won't give you the card you want!</p>
+
+        <h4>2.4. whoWants</h4>
+        <p>Just like whoHas, you can iterate through the wishlists of every player in your clan to see who wants a certain card. So if there's a card that you want to give away, you can find out who would find that offer appealing, then see what cards they can give you!</p>
+        <img src="images/cr-trade-bot/who-wants.png" alt="whoWants" width=500>
+        <p>Here's an example of finding a compatible trade between two players! <img class="card-icon" src="images/cr-trade-bot/card-icons/the-log.png" alt=""> The Log is the hardest legendary to get in a trade (just look at how many people want it!) Fortunately, someone who doesn't care about that card wants another legendary, <img class="card-icon" src="images/cr-trade-bot/card-icons/lumberjack.png" alt=""> Lumberjack, which the player has. With some communication, both wishes are fulfilled!</p>
+        <img src="images/cr-trade-bot/lumberjackwant.png" alt="" width=600>
+
+        <h4>2.5. whoTakes</h4>
+        <p>If there's a particular card that you want to give away in exchange for a card you want, this is the command for it.</p>
+        <p>This is like a combination of whoHas and whoWants. When entering whoTakes <img class="card-icon" src="images/cr-trade-bot/card-icons/mega-minion.png" alt=""> Mega Minion for <img class="card-icon" src="images/cr-trade-bot/card-icons/elixir-golem.png" alt=""> Elixir Golem, it's basically the same thing as: which players fall under both whoWants Mega Minion AND whoHas Elixir Golem? In this case, two people perfectly fit the deal.</p>
+        <img src="images/cr-trade-bot/who-takes.png" alt="whoTakes" width=500>
+
+        <h4>2.6. findMeTrades</h4>
+        <p>Time for my favorite command. Honestly, I think it's genius.</p>
+        <p>For each card on your wishlist, it gets every single trade possible based on other people's wishlists. All you have to do is enter a rarity, and it will get all of the possibilities for your wishes of that rarity.</p>
+        <p>So let's say one player is looking for an epic trade, and has two epic cards on his wishlist. He puts in fmt epic, and for both cards, it shows a list of every player who would be willing to give that card, as well as the icons of the cards that they would want to receive.</p>
+        <img src="images/cr-trade-bot/fmt.png" alt="fmt" width=500>
+        <p>One of the best parts of this command is that instead of asking other players, you could use this list to quickly figure out what certain people want or which cards you should offer to have the best chance of getting your trade accepted. It's my goto for giving suggestions on what cards players should offer in a trade.</p>
+
+        <h4>2.7. myTradableCards</h4>
+        <p>A newer and requested command, this command simply shows all of the cards in your or another player's collection that are tradable. This is a quick and easy way to view which cards you're able to trade away.</p>
+        <p>This is also useful if you want to trade with a specific person but don't have a card that you want in mind. You can see what they have and decide from there what you would want to request from them!</p>
+        <img src="images/cr-trade-bot/mtc.png" alt="mtc" width=500>
+
+        <h4>2.8. maxedCards</h4>
+        <p>Another requested command, which accepts a rarity as a parameter and shows a list of who has each card of that rarity maxed. Knowing who has a certain card maxed is useful because if they're willing to spend gold, you can ask them for trades because they can trade that card away infinitely.</p>
+        <img src="images/cr-trade-bot/maxed-cards.png" alt="maxedCards" width=400>
+        <p>(Unfortunately, this list does get pretty spammy and the bot can send around 10 messages as a result.)</p>
+      </section>
+
+      <section id="changes">
+        <h1>3. My Features/Changes</h1>
+        <h4>3.1. Priority System</h4>
+        <p>The fmt command has had a decent success rate in my clan, but there are still some misinterpretations when players add cards to their wish lists.</p>
+        <p>Players add cards to their wish lists when they want to hold on to a card, but that doesn't mean they want to receive the card at the moment. This doesn't affect commands like whoHas, since their name being red is accurate (they don't want to give the card away). However, fmt will display that person as willing to receive the card anyway. This has caused some miscommunications and for the overall results of the list to be less accurate.</p>
+        <p>Since there are many benefits to maxing a card one at a time, players often have a single card that they're aiming for, despite having multiple wishes. I wanted to make sure that fmt results only show those prioritized wishes. This could be done by allowing a player to indicate which card they wanted the most. I did this by adding a "priority" field to every wishlist.</p>
+        <img src="images/cr-trade-bot/add-priority.png" alt="addPriority" width=500>
+        <p>When prioritizing a card, that prioritized card is indicated by an asterisk (*) when viewing it in a wishlist. Only one prioritized card is allowed per rarity.</p>
+        <p>So in my case, I have both <img class="card-icon" src="images/cr-trade-bot/card-icons/musketeer.png" alt=""> Musketeer and <img class="card-icon" src="images/cr-trade-bot/card-icons/battle-ram.png" alt=""> Battle Ram in my wishlist, but I'm focusing on leveling up musketeer. But I don't want to give away battle ram either.</p>
+        <p>These are the changes, displaying the before and after in fmt:</p>
+        <img src="images/cr-trade-bot/priority-my-view.png" alt="My view" width=600>
+        <img src="images/cr-trade-bot/priority-other-view.png" alt="Other player's view" width=600>
+        <p>In my view (first image), battle ram is no longer in the list of trades that I want to find. In other players' views (second image), battle ram is no longer shown as one of the cards that I want to receive. These changes are also shown in whoWants and whoTakes (if a prioritized wish for a player exists, the option will only show up if it's the prioritized card).</p>
+        <p>Though it seems like a simple change, having most clanmates tell me which cards they want to prioritize narrows down fmt options to the point where each option is nearly guaranteed if the player has a token. Here are some success cases where I helped my clanmates max their cards by using my version of fmt, which only showed prioritized wishes:</p>
+        <img src="images/cr-trade-bot/logsuccess.png" alt="Maxing The Log" width=700>
+        <img src="images/cr-trade-bot/megaknightsuccess.png" alt="Maxing Mega Knight" width=800>
+
+        <h4>3.2. Truncated fmt view by frequency</h4>
+        <p>Another drawback of the fmt command is that the list of possible trades can become really long if a lot of people have your requested card, to the point that it would be hard to get any meaningful trade information out of it. My response to that would be to count each card icon and see which card is the most requested, so I decided to make that task even easier.</p>
+        <p>By adding the parameter "freq", instead of giving a list of possible trades by player, you can get a truncated view of card icons from highest to least demand. Here's an example with epics:</p>
+        <img src="images/cr-trade-bot/fmt-freq.png" alt="fmt freq" width=600>
+        <p>So if you wanted to have the best chance of getting a successful trade, you could simply offer the first four cards you see in the list of icons, since they showed up the most in the fmt results!</p>
+
+        <h4>3.3. Filtering fmt by your maxed cards</h4>
+        <p>Some people have so much gold that instead of offering the most requested cards, they'll just offer whichever cards they have at max level. That way, all they have to do is spend a portion of their gold and they will never lose any cards by using tokens (since the quantities of maxed cards are infinite). But that limits their trading options, which could cause them to struggle to get trades accepted.</p>
+        <p>By adding the parameter "max", you can filter your fmt results to where it only shows the possible trades where you give away your maxed cards. This helps identify which clanmates are willing to take your offers.</p>
+        <img src="images/cr-trade-bot/fmt-max.png" alt="fmt max" width=600>
+
+        <h4>3.4. Displaying wishes in the clan by rarity</h4>
+        <p>This is more of a requested feature, but I wanted to see if I could implement it just for fun. Someone wanted the whoWants command to be paired with rarity, so it displays every wish in the clan of that rarity. The list view turned out to be similar to the maxedCards command, but not as spammy since only prioritized wishes are being shown in this list.</p>
+        <img src="images/cr-trade-bot/who-wants-rarity.png" alt="whoWants rarity" width=400>
+      </section>
+    </div>
+
+    <footer id="main-footer">
+      <p>&copy; 2019-2020 Andrew Le. <a class="ext-link" href="https://fontsmagazine.com/font/clash-royale-font/">Link for Clash Royale font.</a></p>
+    </footer>
+
+  </body>
+</html>

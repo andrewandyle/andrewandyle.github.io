@@ -1,0 +1,172 @@
+@font-face {
+  font-family:'p5hatty';
+  src: url("../assets/p5hatty.eot"); /* IE9 Compat Modes */
+  src: url("../assets/p5hatty.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+       url("../assets/p5hatty.otf") format("opentype"), /* Open Type Font */
+       url("../assets/p5hatty.svg") format("svg"), /* Legacy iOS */
+       url("../assets/p5hatty.ttf") format("truetype"), /* Safari, Android, iOS */
+       url("../assets/p5hatty.woff") format("woff"), /* Modern Browsers */
+       url("../assets/p5hatty.woff2") format("woff2"); /* Modern Browsers */
+  font-style:normal;
+  font-weight:100;
+}
+
+@font-face {
+  font-family: "Supercell-Magic";
+  src: url("../assets/YouBlockhead.eot"); /* IE9 Compat Modes */
+  src: url("../assets/YouBlockhead.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../assets/YouBlockhead.otf") format("opentype"), /* Open Type Font */
+    url("../assets/YouBlockhead.svg") format("svg"), /* Legacy iOS */
+    url("../assets/YouBlockhead.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../assets/YouBlockhead.woff") format("woff"), /* Modern Browsers */
+    url("../assets/YouBlockhead.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family:'Supercell-Magic', sans-serif;
+}
+
+/* the body of the entire page */
+body{
+  background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('../images/cr-trade-bot/background.png');
+  /* background-size:fill; */
+  color:#fff;
+  margin:0;
+}
+
+.container{
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+}
+
+/* main header repeated on main page */
+#main-header{
+  /* style and colors */
+  /* the color of the header goes through a rainbow gradient */
+  background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+  background-size: 1800% 1800%;
+  color:#fff;
+
+  /* positioning */
+  position:fixed;
+  height:75px;
+  width:100%;
+
+  /* animations for the rainbow gradient */
+  -webkit-animation: rainbow 18s ease infinite;
+  -moz-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
+/* for the text links (About and Projects) on the main header */
+#main-header a{
+  /* style and colors */
+  color: #fff;
+
+  /* positioning */
+  padding: 10px 0px;
+
+  /* text formatting */
+  text-decoration: none;
+  font-size:36px;
+  line-height: 2em;
+  font-family:'p5hatty', sans-serif;
+}
+
+/* every link in the navigation bar is evenly spaced, and glows when hovered over */
+.navigation {
+  display:flex;
+  justify-content:space-around;
+}
+
+.navlink:hover {
+  filter: drop-shadow(0px 0px 10px white);
+}
+
+#top {
+  text-align:center;
+}
+
+#top h1 {
+  color:#d4af37;
+  font-size:36px;
+}
+
+#logo {
+  margin-top:100px;
+  margin-bottom:-50px;
+  width: 50%;
+}
+
+#token-explanation {
+  float:left;
+  width:70%;
+}
+
+#trade-tokens {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:350px;
+  float:right;
+}
+
+.pictures img {
+  padding-right:20px;
+}
+
+.ext-link{
+  color:#40e0d0;
+}
+
+.ext-link:visited{
+  color:#ff00ff;
+}
+
+.card-icon{
+  width:25px;
+}
+
+#main-footer{
+  /* style and colors */
+  background: #333;
+  color:#fff;
+
+  /* positioning */
+  padding:10px;
+
+  /* text formatting */
+  text-align: center;
+  font-size:12px;
+}
+
+@media(max-width:1000px) {
+  .container img:not(.card-icon) {
+    width:90%;
+  }
+}
