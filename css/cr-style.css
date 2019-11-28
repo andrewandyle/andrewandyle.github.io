@@ -210,7 +210,8 @@ h4 {
 
 @media(max-width:1000px) {
   #table-of-contents {
-    padding-left:30px;
+    margin-left:10px;
+    padding-left:100px;
   }
   .container img:not(.card-icon) {
     width:90%;
