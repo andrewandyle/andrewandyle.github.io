@@ -119,8 +119,37 @@ body{
 
 #logo {
   margin-top:100px;
-  margin-bottom:-50px;
+  margin-bottom:-150px;
   width: 50%;
+}
+
+.doc-section {
+  color:#ccc;
+  text-decoration:none;
+}
+
+.doc-section:hover {
+  color:#fff;
+}
+
+.example-deck {
+  text-align:center;
+}
+
+.common-text {
+  color:#A7E4FF;
+}
+
+.rare-text {
+  color:#FFB379;
+}
+
+.epic-text {
+  color:#FF8DFF;
+}
+
+.legendary-text {
+  color:#CEDAE6;
 }
 
 #token-explanation {
@@ -132,12 +161,26 @@ body{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width:350px;
+  width:25%;
   float:right;
+}
+
+.container h1 {
+  padding-top:100px;
+}
+
+h4 {
+  border-top: 1px solid gray;
+  padding-top:20px;
 }
 
 .pictures img {
   padding-right:20px;
+}
+
+#issue-pictures {
+  display:flex;
+  justify-content:space-between;
 }
 
 .ext-link{
@@ -168,5 +211,16 @@ body{
 @media(max-width:1000px) {
   .container img:not(.card-icon) {
     width:90%;
+  }
+  #token-explanation {
+    width:100%;
+  }
+  #trade-tokens {
+    width:90%;
+    float:none;
+    padding-bottom: 10px;
+  }
+  #issue-pictures {
+    flex-wrap:wrap;
   }
 }
