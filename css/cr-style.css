@@ -209,9 +209,11 @@ h4 {
 }
 
 @media(max-width:1000px) {
-  #table-of-contents {
-    margin-left:10px;
-    padding-left:100px;
+  #top-tokens {
+    width:50%;
+  }
+  #table-of-contents li {
+    font-size:12px;
   }
   .container img:not(.card-icon) {
     width:90%;
