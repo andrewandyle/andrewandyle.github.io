@@ -34,7 +34,7 @@
     </section>
 
     <section id="table-of-contents">
-      <div id="toc-container" class="container">
+      <div class="container">
         <h2>Table of Contents</h2>
         <ol>
           <a class="doc-section" href="#introduction"><li>Introduction</li></a>
@@ -70,14 +70,14 @@
       <section id="introduction">
         <h1>1. Introduction</h1>
         <h4 id="what-are-trades">1.1. What are trades?</h4>
-        <p>For those of you who don't know the mobile game Clash Royale, I will keep this short.</p>
+        <p>If you know what Clash Royale is, skip this section. Otherwise, I'll keep this brief.</p>
         <p>In Clash Royale, players battle each other in a 1v1 setting to destroy each other's towers. They make decks composed of troops, spells, and/or buildings, which are represented by cards. Players collect cards to level them up to the max level (13).</p>
         <div class="example-deck">
           <img src="images/cr-trade-bot/exampledeck.jpg" alt="Example Deck" width=400>
         </div>
         <p>There are four rarities of cards in the game, by increasing difficulty to obtain (shown left to right in above picture): <a class="common-text">Common,</a> <a class="rare-text">Rare,</a> <a class="epic-text">Epic, </a> and <a class="legendary-text">Legendary.</a></p>
         <div id="what-trading-is">
-          <p id="token-explanation">Recently, an update in Clash Royale introduced Trade Tokens, in which players can trade cards of the same rarity with each other. Both players must have a trade token of the same rarity. The tradable quantities are: <a class="common-text">250 Commons,</a> <a class="rare-text">50 Rares,</a> <a class="epic-text">10 Epics,</a> and <a class="legendary-text">1 Legendary.</a> And if a player has a card maxed, they can infinitely give that card at the cost of gold!</p>
+          <p id="token-explanation">Recently, an update in Clash Royale introduced Trade Tokens, in which players can trade cards of the same rarity with each other (within the same clan). One player posts a trade and offers up to four cards to give away, and another player can accept it. Both players must have a trade token of the same rarity. The tradable quantities are: <a class="common-text">250 Commons,</a> <a class="rare-text">50 Rares,</a> <a class="epic-text">10 Epics,</a> and <a class="legendary-text">1 Legendary.</a> And if a player has a card maxed, they can infinitely give that card at the cost of gold!</p>
           <img id="trade-tokens" src="images/cr-trade-bot/trade-tokens.jpg" alt="Trade Tokens">
         </div>
       </section>
@@ -167,7 +167,6 @@
         <h4 id="maxed-cards">2.8. maxedCards</h4>
         <p>Another requested command, which accepts a rarity as a parameter and shows a list of who has each card of that rarity maxed. Knowing who has a certain card maxed is useful because if they're willing to spend gold, you can ask them for trades because they can trade that card away infinitely.</p>
         <img src="images/cr-trade-bot/maxed-cards.png" alt="maxedCards" width=400>
-        <p>(Unfortunately, this list does get pretty spammy and the bot can send around 10 messages as a result.)</p>
       </section>
 
       <section id="changes">
@@ -199,7 +198,7 @@
         <img src="images/cr-trade-bot/fmt-max.png" alt="fmt max" width=600>
 
         <h4 id="who-wants-rarity">3.4. Displaying wishes in the clan by rarity</h4>
-        <p>This is more of a requested feature, but I wanted to see if I could implement it just for fun. Someone wanted the whoWants command to be paired with rarity, so it displays every wish in the clan of that rarity. The list view turned out to be similar to the maxedCards command, but not as spammy since only prioritized wishes are being shown in this list.</p>
+        <p>This is more of a requested feature, but I wanted to see if I could implement it just for fun. Someone wanted the whoWants command to be paired with rarity, so it displays every wish in the clan of that rarity. This is another quick way to see which cards of a rarity within a clan are popular and should be offered.</p>
         <img src="images/cr-trade-bot/who-wants-rarity.png" alt="whoWants rarity" width=400>
       </section>
     </div>

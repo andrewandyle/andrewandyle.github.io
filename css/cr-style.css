@@ -24,18 +24,21 @@
   font-style: normal;
 }
 
+/* the entire page, except for the header, uses the Clash Royale font */
 * {
   font-family:'Supercell-Magic', sans-serif;
 }
 
 /* the body of the entire page */
 body{
+  /* this is the diamond background used throughout the entire page */
   background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('../images/cr-trade-bot/background.png');
-  /* background-size:fill; */
   color:#fff;
   margin:0;
 }
 
+/* these next several blocks of code are repeated from the main page */
+/* all of the content for this page is in a container */
 .container{
   width:80%;
   margin:auto;
@@ -108,21 +111,27 @@ body{
   filter: drop-shadow(0px 0px 10px white);
 }
 
+/* end of repeat */
+
+/* top of the page, the first visuals you see when loading the page */
 #top {
   text-align:center;
 }
 
+/* gold font for the header "Trade Helper Bot" */
 #top h1 {
   color:#d4af37;
   font-size:36px;
 }
 
+/* the Clash Royale logo */
 #logo {
   margin-top:100px;
   margin-bottom:-150px;
   width: 50%;
 }
 
+/* these are all the links in the Table of Contents */
 .doc-section {
   color:#ccc;
   text-decoration:none;
@@ -132,10 +141,23 @@ body{
   color:#fff;
 }
 
+/* each new section is indicated by a big line break */
+.container h1 {
+  padding-top:100px;
+}
+
+/* each new subsection is indicated by a thin gray border */
+h4 {
+  border-top: 1px solid gray;
+  padding-top:20px;
+}
+
+/* the picture showing the example of card rarities */
 .example-deck {
   text-align:center;
 }
 
+/* these are the text colors for each card rarity */
 .common-text {
   color:#A7E4FF;
 }
@@ -152,6 +174,7 @@ body{
   color:#CEDAE6;
 }
 
+/* when trade tokens are introduced, the text takes up the left while the picture is on the right */
 #token-explanation {
   float:left;
   width:70%;
@@ -165,19 +188,12 @@ body{
   float:right;
 }
 
-.container h1 {
-  padding-top:100px;
-}
-
-h4 {
-  border-top: 1px solid gray;
-  padding-top:20px;
-}
-
+/* these are the pictures showing examples of completed trades, separated a little bit */
 .pictures img {
   padding-right:20px;
 }
 
+/* the two pictures showing examples of issues use a flex display */
 #issue-pictures {
   display:flex;
   justify-content:space-between;
@@ -191,6 +207,7 @@ h4 {
   color:#ff00ff;
 }
 
+/* card icons that go next to card names throughout the page */
 .card-icon{
   width:25px;
 }
