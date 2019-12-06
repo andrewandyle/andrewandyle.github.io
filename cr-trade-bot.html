@@ -9,11 +9,11 @@
   <body>
     <header id="main-header">
       <div class="navigation">
-        <a class="navlink" href="index.html#showcase">
+        <a class="navlink" href="index.html">
           <img src="images/logo.png" alt="" width=100>
         </a>
-        <a class="navlink" href="index.html#about-me">About</a>
-        <a class="navlink" href="index.html#projects">Projects</a>
+        <a class="navlink" href="index.html#about-scroll">About</a>
+        <a class="navlink" href="index.html#project-scroll">Projects</a>
         <a class="navlink" href="https://github.com/elydna" target="_blank">
           <img src="images/github.jpg" alt="" width=35>
         </a>
@@ -60,9 +60,9 @@
             <a class="doc-section" href="#fmt-freq"><li>Truncated fmt view by frequency</li></a>
             <a class="doc-section" href="#fmt-max"><li>Filtering fmt by your maxed cards</li></a>
             <a class="doc-section" href="#who-wants-rarity"><li>Displaying wishes in the clan by rarity</li></a>
+            <a class="doc-section" href="#max-auto-removal"><li>Automatic removal of maxed cards from wl</li></a>
           </ol>
         </ol>
-
       </div>
     </section>
 
@@ -195,11 +195,17 @@
         <h4 id="fmt-max">3.3. Filtering fmt by your maxed cards</h4>
         <p>Some people have so much gold that instead of offering the most requested cards, they'll just offer whichever cards they have at max level. That way, all they have to do is spend a portion of their gold and they will never lose any cards by using tokens (since the quantities of maxed cards are infinite). But that limits their trading options, which could cause them to struggle to get trades accepted.</p>
         <p>By adding the parameter "max", you can filter your fmt results to where it only shows the possible trades where you give away your maxed cards. This helps identify which clanmates are willing to take your offers.</p>
-        <img src="images/cr-trade-bot/fmt-max.png" alt="fmt max" width=600>
+        <img src="images/cr-trade-bot/fmt-max.png" alt="fmt max" width=800>
 
         <h4 id="who-wants-rarity">3.4. Displaying wishes in the clan by rarity</h4>
         <p>This is more of a requested feature, but I wanted to see if I could implement it just for fun. Someone wanted the whoWants command to be paired with rarity, so it displays every wish in the clan of that rarity. This is another quick way to see which cards of a rarity within a clan are popular and should be offered.</p>
         <img src="images/cr-trade-bot/who-wants-rarity.png" alt="whoWants rarity" width=400>
+
+        <h4 id="max-auto-removal">3.5. Automatic removal of maxed cards from wl</h4>
+        <p>Once someone maxes a card, there is no reason to receive it in trades anymore. But maxing a card doesn't automatically remove it from the wishlist. The commands will show the player as still wanting the card, which would cause inaccuracy on commands like fmt.</p>
+        <img src="images/cr-trade-bot/max-in-wl.png" alt="maxed card in wl" width=500>
+        <p>A solution to this was to track the card level in every command and call the remove function every time a maxed card was in a wishlist. For example, by viewing someone's wishlist, any cards in there that are maxed should be removed before the wishlist is displayed.</p>
+        <img src="images/cr-trade-bot/max-auto-removal.png" alt="automatic removal of maxed card" width=800>
       </section>
     </div>
 
