@@ -96,8 +96,9 @@ body{
 }
 
 #showcase{
+  display:inline-block;
   /* positioning */
-  min-height:730px;
+  max-height:730px;
 
   /* text formatting, this centers the button as well */
   text-align:center;
@@ -136,6 +137,7 @@ body{
 }
 
 .showcase-items {
+  margin-top:5%;
   position:absolute;
   z-index:2;
 }
@@ -151,7 +153,6 @@ body{
 }
 
 #logo {
-  margin-top:100px;
   width: 50%;
 }
 
@@ -277,15 +278,18 @@ body{
 
 /* Media query to fix some section sizes as the screen gets smaller, or for mobile views */
 @media(max-width:1000px) {
-  #showcase {
+  /* #showcase {
     min-height:100px;
+  } */
+  .showcase-items {
+    margin-top:15%;
   }
   #showcase h3 {
     font-size:18px;
+    margin-top:-10px;
   }
   #logo {
-    margin-top:100px;
-    width:70%;
+    width:30%;
   }
   #about-me{
     width:100%;
