@@ -41,6 +41,7 @@ body{
   position:fixed;
   height:75px;
   width:100%;
+  z-index:3;
 
   /* animations for the rainbow gradient */
   -webkit-animation: rainbow 18s ease infinite;
@@ -95,21 +96,6 @@ body{
 }
 
 #showcase{
-  /* image */
-  background-size:auto 100%;
-  background-position:center;
-  background-repeat:no-repeat;
-  backface-visibility: hidden;
-
-  /* initial image */
-  background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg');
-
-  /* slideshow animation for three pictures */
-  animation: slideshow 24s ease-in-out infinite 0.5s;
-  -webkit-animation: slideshow 24s ease-in-out infinite 0.5s;
-  -moz-animation: slideshow 24s ease-in-out infinite 0.5s;
-  -o-animation: slideshow 24s ease-in-out infinite 0.5s;
-
   /* positioning */
   min-height:730px;
 
@@ -117,25 +103,41 @@ body{
   text-align:center;
 }
 
-@keyframes slideshow {
-  0%, 100% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg'); }
-  33.3% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/grandcanyon.jpg'); }
-  66.6% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/piano.jpg'); }
+.showcase-slideshow {
+  /* slideshow is in the background */
+  z-index:1;
+  margin:auto;
 }
-@-webkit-keyframes slideshow {
-  0%, 100% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg'); }
-  33.3% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/grandcanyon.jpg'); }
-  66.6% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/piano.jpg'); }
+
+.showcase-img {
+  /* to dim the slideshow image */
+  filter: brightness(50%);
+
+  /* hide images by default */
+  display: none;
 }
-@-moz-keyframes slideshow {
-  0%, 100% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg'); }
-  33.3% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/grandcanyon.jpg'); }
-  66.6% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/piano.jpg'); }
+
+/* fade transition */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
-@-o-keyframes slideshow {
-  0%, 100% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/gdclab.jpg'); }
-  33.3% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/grandcanyon.jpg'); }
-  66.6% { background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/slideshow/piano.jpg'); }
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.showcase-items {
+  position:absolute;
+  z-index:2;
 }
 
 #showcase h3{
@@ -149,7 +151,7 @@ body{
 }
 
 #logo {
-  margin-top:150px;
+  margin-top:100px;
   width: 50%;
 }
 
