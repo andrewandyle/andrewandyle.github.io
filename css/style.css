@@ -220,6 +220,7 @@ body{
 .personal-slideshow {
   position: relative;
   margin: auto;
+  overflow:hidden;
 }
 
 .life-slide {
@@ -227,7 +228,7 @@ body{
   width:80%;
   margin:auto;
   overflow:hidden;
-  min-height:600px;
+  min-height:550px;
   color:#fff;
   font-size:24px;
 }

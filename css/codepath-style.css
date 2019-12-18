@@ -111,7 +111,7 @@ body{
 /* the Codepath logo */
 #logo {
   margin-top:150px;
-  margin-bottom:-120px;
+  margin-bottom:-30px;
   width: 40%;
 }
 
@@ -148,10 +148,6 @@ pre {
   font-size:14px;
 }
 
-/* each new section is indicated by a big line break */
-.container h1 {
-  padding-top:100px;
-}
 
 .project-container {
   display:flex;
@@ -182,6 +178,7 @@ pre {
 @media(max-width:1000px) {
   #logo {
     width:60%;
+    margin-bottom:-15px;
   }
   #top h1 {
     font-size:24px;
