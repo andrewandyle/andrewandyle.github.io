@@ -206,6 +206,83 @@ body{
   width:200px;
 }
 
+#personal-life {
+  padding-top:25px;
+}
+
+#pl-title {
+  text-align:center;
+  font-size:40px;
+  color:#fff;
+  margin-bottom:-20px;
+}
+
+.personal-slideshow {
+  position: relative;
+  margin: auto;
+}
+
+.life-slide {
+  display:none;
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+  min-height:600px;
+  color:#fff;
+  font-size:24px;
+}
+
+.slide-media {
+  text-align:center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor:pointer;
+  position:absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+#dot-container {
+  text-align:center;
+  padding-top:30px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #717171;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #bbb;
+}
+
 #projects {
   /* style and colors */
   background: #222;
@@ -278,9 +355,6 @@ body{
 
 /* Media query to fix some section sizes as the screen gets smaller, or for mobile views */
 @media(max-width:1000px) {
-  /* #showcase {
-    min-height:100px;
-  } */
   .showcase-items {
     margin-top:15%;
   }
@@ -297,6 +371,12 @@ body{
   }
   #avi{
     float:left;
+  }
+  iframe {
+    -ms-zoom: 0.75;
+    -moz-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    -webkit-transform: scale(0.75);
   }
   #projects li{
     padding-right:30px;

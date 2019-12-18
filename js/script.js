@@ -6,17 +6,46 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 // slideshow for showcase
-var slideIndex = 0;
-showSlides();
+var showcaseIndex = 0;
+showcaseSlides();
 
-function showSlides() {
+function showcaseSlides() {
   var i;
   var slides = document.getElementsByClassName("showcase-img");
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
+  showcaseIndex++;
+  if (showcaseIndex > slides.length) {showcaseIndex = 1}
+  slides[showcaseIndex-1].style.display = "block";
+  setTimeout(showcaseSlides, 8000); // Change image every 8 seconds
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("life-slide");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
   slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 8000); // Change image every 8 seconds
+  dots[slideIndex-1].className += " active";
 }
