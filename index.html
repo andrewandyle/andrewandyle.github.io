@@ -63,57 +63,60 @@
 
       <h1 id="pl-title">Personal Life</h1>
 
-      <div class="personal-slideshow">
-        <div class="life-slide fade" id="piano-slide">
-          <h1>Piano Life</h1>
-          <p>My most prominent hobby besides coding is playing the piano, which I've done for over 10 years! I've performed in numerous events, such as high school talent shows while duoing with my best friend Jordan, and most recently, at my sister's wedding.</p>
+      <div class="personal-slideshow smooth">
 
-          <p>I was taught by my piano teacher, Diane Barnhart, during my middle and high school years. Through her lessons, I had the opportunity to play in many recitals and audition for the National Piano Guild for 5 consecutive years, winning awards for my excellent performance.</p>
-          <div class="slide-media">
-            <img src="images/personal-life/pianowjordan.jpg" alt="Piano" height=300>
-            <img src="images/slideshow/piano.jpg" alt="Piano" height=300>
-          </div>
-
-        </div>
-
-        <div class="life-slide fade" id="potluck-slide">
-          <h1>Asian Potluck</h1>
-          <p>My CS homies and I decided that we needed some time outside of the computer labs at the UT GDC and decided to go to each others' apartments and cook. Thus, Asian Potluck was born, and we started hosting potlucks every two weeks.</p>
-
-          <p>We always go all out on our cooking, and enjoy stuffing ourselves once we feast. We show off our unique creations: my main dishes are fish sauce wings and truffle scalloped potatoes! My friends have made dishes such as vodka sauce pasta, onion soup mac n' cheese, you name it!</p>
-          <div class="slide-media">
-            <img src="images/personal-life/potluck-selfie.jpg" alt="Potluck" height=300>
-            <iframe width="533" height="300"
-              src="https://www.youtube.com/embed/qnIpe8PR0_w">
-            </iframe>
+        <div class="slide-container">
+          <div class="life-slide">
+            <h1>Piano Life</h1>
+            <p>My most prominent hobby besides coding is playing the piano, which I've done for over 10 years! I've performed in numerous events, such as high school talent shows while duoing with my best friend Jordan, and most recently, at my sister's wedding.</p>
+            <p>I was taught by my piano teacher, Diane Barnhart, during my middle and high school years. Through her lessons, I had the opportunity to play in many recitals and audition for the National Piano Guild for 5 consecutive years, winning awards for my excellent performance.</p>
+            <div class="slide-media">
+              <img src="images/personal-life/pianowjordan.jpg" alt="Piano" height=300>
+              <img src="images/slideshow/piano.jpg" alt="Piano" height=300>
+            </div>
           </div>
         </div>
 
-        <div class="life-slide fade" id="channel-slide">
-          <h1>My Meme Channel</h1>
-          <p>Dragon Ball has been my favorite franchise throughout my life. Its most recent series is Dragon Ball Super, and while watching it air live in Japan, I randomly started making compilations. One of them was of the laughter of a villain named Frieza (titled "OHOHOHOHO").</p>
 
-          <p>In December 2017, that video started going viral, gaining almost 100,000 views every day. It currently has over a million views, along with two of my other videos. <a class="ext-link" href="https://www.youtube.com/channel/UC8fPAMcNffG2HhrJMsCZLIQ" target="_blank">My channel</a> started gaining tons of subscribers (nearly 17,000 right now!), and I made DBS memes regularly.</p>
 
-          <div class="slide-media">
-            <iframe width="533" height="300"
-              src="https://www.youtube.com/embed/__t8WrkxhvM">
-            </iframe>
-            <img src="images/personal-life/viral-channel.png" alt="Channel Stats" height=300>
+        <div class="slide-container">
+          <div class="life-slide">
+            <h1>Asian Potluck</h1>
+            <p>My CS homies and I decided that we needed some time outside of the computer labs at the UT GDC and decided to go to each others' apartments and cook. Thus, Asian Potluck was born, and we started hosting potlucks every two weeks.</p>
+            <p>We always go all out on our cooking, and enjoy stuffing ourselves once we feast. We show off our unique creations: my main dishes are fish sauce wings and truffle scalloped potatoes! My friends have made dishes such as vodka sauce pasta, onion soup mac n' cheese, you name it!</p>
+            <div class="slide-media">
+              <img src="images/personal-life/potluck-selfie.jpg" alt="Potluck" height=300>
+              <iframe width="533" height="300"
+                src="https://www.youtube.com/embed/qnIpe8PR0_w">
+              </iframe>
+            </div>
           </div>
-
         </div>
 
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+        <div class="slide-container">
+          <div class="life-slide">
+            <h1>My Meme Channel</h1>
+            <p>Dragon Ball has been my favorite franchise throughout my life. Its most recent series is Dragon Ball Super, and while watching it air live in Japan, I randomly started making compilations. One of them was of the laughter of a villain named Frieza (titled "OHOHOHOHO").</p>
+            <p>In December 2017, that video started going viral, gaining almost 100,000 views every day. It currently has over a million views, along with two of my other videos. <a class="ext-link" href="https://www.youtube.com/channel/UC8fPAMcNffG2HhrJMsCZLIQ" target="_blank">My channel</a> started gaining tons of subscribers (nearly 17,000 right now!), and I made DBS memes regularly.</p>
+            <div class="slide-media">
+              <iframe width="533" height="300"
+                src="https://www.youtube.com/embed/__t8WrkxhvM">
+              </iframe>
+              <img src="images/personal-life/viral-channel.png" alt="Channel Stats" height=300>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div id="dot-container">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
-      
+
       <div id="project-scroll"></div>
     </section>
 
