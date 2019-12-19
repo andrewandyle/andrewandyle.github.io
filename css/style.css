@@ -220,17 +220,21 @@ body{
 
 /* prev and next buttons to navigate through personal life slides */
 .prev, .next {
-  cursor: pointer;
+  /* style and text formatting */
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+
+  /* positioning */
   position: relative;
   top: 50%;
   width: auto;
   margin-top: -350px;
   padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
+
+  cursor: pointer;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
   user-select: none;
 }
 
@@ -249,56 +253,75 @@ body{
   display: flex;
   align-items: center;
 
+  /* the width of the entire slideshow is determined by the number of slides */
   --n: 3;
   width: 100%;
   width: calc(var(--n)*100%);
 
+  /* transition is a translation when swiping */
   transform: translate(calc(var(--i, 0)/var(--n)*-100% + var(--tx, 0px)));
 }
 
+/* allows for a smooth transition when swiping */
 .smooth {
   transition: transform calc(var(--f, 1)*.5s) ease-out;
 }
 
 .slide-container {
+  /* width of a single slide is the total width of all slides combined divided by the number of slides */
   width: 100%;
   width: calc(100%/var(--n));
 
+  /* set pointer-events to none to allow swiping */
   pointer-events: none;
 }
 
 iframe {
+  /* allow YouTube videos within slides to be playable */
   pointer-events:auto;
 }
 
+/* a single slide within the slideshow */
 .life-slide {
+  /* style and colors */
+  color:#fff;
+
+  /* positioning */
   width:80%;
   margin:auto;
   min-height:550px;
-  color:#fff;
+
+  /* text formatting */
   font-size:24px;
 }
 
+/* center the pictures and videos within the slides */
 .slide-media {
   text-align:center;
 }
 
+/* the container for the dots to navigate between slides */
 #dot-container {
   text-align:center;
   padding-top:30px;
 }
 
 .dot {
-  cursor: pointer;
+  /* style and colors */
+  background-color: #717171;
+  border-radius: 50%;
+
+  /* positioning */
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #717171;
-  border-radius: 50%;
   display: inline-block;
+
+  cursor: pointer;
   transition: background-color 0.6s ease;
 }
 
+/* whichever slide is active will have its dot brighter */
 .active, .dot:hover {
   background-color: #bbb;
 }
