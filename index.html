@@ -77,8 +77,6 @@
           </div>
         </div>
 
-
-
         <div class="slide-container">
           <div class="life-slide">
             <h1>Asian Potluck</h1>
@@ -92,8 +90,6 @@
             </div>
           </div>
         </div>
-
-
 
         <div class="slide-container">
           <div class="life-slide">
@@ -111,10 +107,13 @@
 
       </div>
 
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
       <div id="dot-container">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
       </div>
 
       <div id="project-scroll"></div>

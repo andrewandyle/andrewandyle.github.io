@@ -66,6 +66,32 @@ function move(e) {
   }
 };
 
+function currentSlide(n) {
+  var prev = i;
+  var diff = n - prev;
+  if (n >= 0 && n <= N - 1) {
+    _C.style.setProperty('--i', i += diff);
+  }
+  var dots = document.getElementsByClassName("dot");
+  for (var j = 0; j < dots.length; j++) {
+    dots[j].className = dots[j].className.replace(" active", "");
+  }
+  dots[i].className += " active";
+
+}
+
+function plusSlides(n) {
+  if ((i > 0 && i < N - 1) || (i == 0 && n == 1) || (i == N - 1 && n == -1)) {
+    _C.style.setProperty('--i', i += n);
+  }
+
+  var dots = document.getElementsByClassName("dot");
+  for (var j = 0; j < dots.length; j++) {
+      dots[j].className = dots[j].className.replace(" active", "");
+  }
+  dots[i].className += " active";
+}
+
 size();
 
 addEventListener('resize', size, false);
@@ -75,6 +101,8 @@ _C.addEventListener('touchstart', lock, false);
 
 _C.addEventListener('mouseup', move, false);
 _C.addEventListener('touchend', move, false);
+
+// _C.addEventListener('onclick', plusSlides, false);
 
 function drag(e) {
   e.preventDefault();

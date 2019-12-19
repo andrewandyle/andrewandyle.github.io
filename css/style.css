@@ -208,7 +208,7 @@ body{
 
 #personal-life {
   padding-top:25px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 #pl-title {
@@ -216,6 +216,33 @@ body{
   font-size:40px;
   color:#fff;
   margin-bottom:-20px;
+}
+
+/* prev and next buttons to navigate through personal life slides */
+.prev, .next {
+  cursor: pointer;
+  position: relative;
+  top: 50%;
+  width: auto;
+  margin-top: -350px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* position prev button to the left */
+.prev {
+  float:left;
+}
+
+/* position next button to the right */
+.next {
+  float:right;
+  border-radius: 3px 0 0 3px;
 }
 
 .personal-slideshow {
@@ -262,6 +289,7 @@ iframe {
 }
 
 .dot {
+  cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
@@ -271,7 +299,7 @@ iframe {
   transition: background-color 0.6s ease;
 }
 
-.active {
+.active, .dot:hover {
   background-color: #bbb;
 }
 
@@ -325,6 +353,8 @@ iframe {
 }
 
 .ext-link{
+  /* so that links in the slideshow will work */
+  pointer-events:auto;
   color:#40e0d0;
 }
 
