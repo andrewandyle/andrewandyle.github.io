@@ -24,96 +24,99 @@
       </div>
     </header>
 
-    <section id="top">
-      <div class="container">
-        <img id="logo" src="images/codepath/codepath-logo.png" alt="CodePath">
-        <h1>ANDROID UNIVERSITY</h1>
-        <h3>This page reviews the Android concepts that I learned in this remote course. For more information about CodePath and the courses they offer, visit <a class="ext-link" href="https://codepath.org/">codepath.org</a>.</h3>
-      </div>
-    </section>
-
-    <section id="table-of-contents">
-      <div class="container">
-        <h2>Table of Contents</h2>
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <h2>Table of Contents</h2>
+      <ol>
+        <a class="doc-section" href="#my-apps"><li>My Apps</li></a>
         <ol>
-          <a class="doc-section" href="#my-apps"><li>My Apps</li></a>
-          <ol>
-            <a class="doc-section" href="#flixster"><li>Flixster</li></a>
-            <a class="doc-section" href="#twitter"><li>Twitter Clone App</li></a>
-            <a class="doc-section" href="#instagram"><li>Instagram Clone App</li></a>
-          </ol>
-          <a class="doc-section" href="#recycler-view"><li>RecyclerViews</li></a>
-          <a class="doc-section" href="#activities-and-fragments"><li>Activities and Fragments</li></a>
+          <a class="doc-section" href="#flixster"><li>Flixster</li></a>
+          <a class="doc-section" href="#twitter"><li>Twitter Clone App</li></a>
+          <a class="doc-section" href="#instagram"><li>Instagram Clone App</li></a>
         </ol>
-      </div>
-    </section>
+        <a class="doc-section" href="#recycler-view"><li>RecyclerView</li></a>
+        <a class="doc-section" href="#activities-and-fragments"><li>Activities and Fragments</li></a>
+      </ol>
+    </div>
 
-    <div class="container">
-      <section id="my-apps">
-        <h1>1. My Apps</h1>
-        <p>CodePath Android University is a 6-week remote course where students develop apps using Android Studio. After each course, we spend each week either starting a new app or adding functionality to an existing app. We created 3 apps to learn the fundamentals of Android development, each modeling popular apps such as Twitter and Instagram. All of these projects can be found on my GitHub (click on the links).</p>
+    <div id="main">
 
-        <h3 id="flixster"><a class="project-link" href="https://github.com/elydna/Flixster" target="_blank">Flixster</a></h3>
-        <div class="project-container">
-          <img src="images/codepath/flixster.gif" alt="Flixster" width=300>
-          <div class="description">
-            <p>This app used the Movie Database API to allow users to view a list of currently popular movies. This project taught students how to:</p>
-            <ul>
-              <li>Retrieve data in a JSON format and parse the data</li>
-              <li>Implement a <code class="code-name">RecyclerView</code> to show the list of movies</li>
-              <li>Show more details of the movie by clicking on it, by navigating to a separate activity</li>
-              <li>Use a YouTube player view to show the trailers and allow them to play in full-screen</li>
-              <li>Create an alternate view of the app in landscape mode</li>
-            </ul>
-          </div>
+      <button class="openbtn" onclick="openNav()">&#9776;</button>
+
+      <section id="top">
+        <div class="container">
+          <img id="logo" src="images/codepath/codepath-logo.png" alt="CodePath">
+          <h1>ANDROID UNIVERSITY</h1>
+          <h3>This page reviews the Android concepts that I learned in this remote course. For more information about CodePath and the courses they offer, visit <a class="ext-link" href="https://codepath.org/">codepath.org</a>.</h3>
         </div>
-
-        <h3 id="twitter"><a class="project-link" href="https://github.com/elydna/SimpleTweet" target="_blank">Twitter Clone App</a></h3>
-        <div class="project-container">
-          <img src="images/codepath/twitter.gif" alt="Twitter" width=300>
-          <div class="description">
-            <p>This app used the Twitter API to create a clone of the Twitter app, implementing its functionality. This project taught students how to:</p>
-            <ul>
-              <li>Use Twitter OAuth to allow the user to sign in</li>
-              <li>Use get requests to retrieve the user's tweets</li>
-              <li>Implement a <code class="code-name">RecyclerView</code> to show the home timeline</li>
-              <li>Refresh the timeline by pulling down</li>
-              <li>Persist tweets into the timeline so the user can view them offline, using SQLite</li>
-              <li>Allow the user to scroll with infinite pagination</li>
-              <li>Allow user to compose a new tweet</li>
-            </ul>
-          </div>
-        </div>
-
-        <h3 id="instagram"><a class="project-link" href="https://github.com/elydna/InstaClone" target="_blank">Instagram Clone App</a></h3>
-        <div class="project-container">
-          <img src="images/codepath/instagram.gif" alt="Instagram" width=300>
-          <div class="description">
-            <p>Rather than using the Instagram API, this app involved setting up our own Parse backend to build a new Instagram app from the ground-up, storing our own users and posts in a database. This project taught students how to:</p>
-            <ul>
-              <li>Use Parse authentication to allow users to sign up and log in</li>
-              <li>Take a picture using the Camera app, and adding the photo to the database</li>
-              <li>Implement a <code class="code-name">RecyclerView</code> to show posts on the home screen (do you see a pattern here?)</li>
-              <li>Display each screen in fragments and switch between them within the main activity (using the bottom navigation view)</li>
-            </ul>
-          </div>
-        </div>
-
       </section>
 
-      <section id="recycler-view">
-        <h1>2. RecyclerView</h1>
-        <p>In this course, the main layout for all our apps was a feed/timeline view, consisting of a <code class="code-name">RecyclerView</code>. This is one of the best options in terms of memory and efficiency when working with large datasets. For the MovieDB API, we displayed a list for the 20 most popular movies, and the Twitter API allowed us to get each tweet in the timeline. But on an Android phone screen, users can only see a few items out of the dataset at a time.</p>
-        <p>Rather than allocating resources in memory for the items not in view, the solution is to only allocate memory and inflate views for the items that are shown on the screen. Then we bind new items to the views that we have already inflated. These views are basically "recycled" (hence the name).</p>
-        <p>Implementing a <code class="code-name">RecyclerView</code> involves creating:</p>
+      <div class="container">
+        <section id="my-apps">
+          <h1>1. My Apps</h1>
+          <p>CodePath Android University is a 6-week remote course where students develop apps using Android Studio. After each course, we spend each week either starting a new app or adding functionality to an existing app. We created 3 apps to learn the fundamentals of Android development, each modeling popular apps such as Twitter and Instagram. All of these projects can be found on my GitHub (click on the links).</p>
 
-        <ul>
-          <li>A model class for the data</li>
-          <div class="recycler-component">
-            <p>We usually create a class representing the data model being displayed by the <code class="code-name">RecyclerView</code>, such as a Tweet, Email, Contact, etc., which contains fields with the information that will be displayed (username, title, description, etc.).</p>
-            <p>For example, let's make a simple <code class="code-name">Post</code> model that consists of a name, body (basically a tweet), and a profile picture.</p>
-            <pre>
-              <code>
+          <h3 id="flixster"><a class="project-link" href="https://github.com/elydna/Flixster" target="_blank">Flixster</a></h3>
+          <div class="project-container">
+            <img src="images/codepath/flixster.gif" alt="Flixster" width=300>
+            <div class="description">
+              <p>This app used the Movie Database API to allow users to view a list of currently popular movies. This project taught students how to:</p>
+              <ul>
+                <li>Retrieve data in a JSON format and parse the data</li>
+                <li>Implement a <code class="code-name">RecyclerView</code> to show the list of movies</li>
+                <li>Show more details of the movie by clicking on it, by navigating to a separate activity</li>
+                <li>Use a YouTube player view to show the trailers and allow them to play in full-screen</li>
+                <li>Create an alternate view of the app in landscape mode</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 id="twitter"><a class="project-link" href="https://github.com/elydna/SimpleTweet" target="_blank">Twitter Clone App</a></h3>
+          <div class="project-container">
+            <img src="images/codepath/twitter.gif" alt="Twitter" width=300>
+            <div class="description">
+              <p>This app used the Twitter API to create a clone of the Twitter app, implementing its functionality. This project taught students how to:</p>
+              <ul>
+                <li>Use Twitter OAuth to allow the user to sign in</li>
+                <li>Use get requests to retrieve the user's tweets</li>
+                <li>Implement a <code class="code-name">RecyclerView</code> to show the home timeline</li>
+                <li>Refresh the timeline by pulling down</li>
+                <li>Persist tweets into the timeline so the user can view them offline, using SQLite</li>
+                <li>Allow the user to scroll with infinite pagination</li>
+                <li>Allow user to compose a new tweet</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 id="instagram"><a class="project-link" href="https://github.com/elydna/InstaClone" target="_blank">Instagram Clone App</a></h3>
+          <div class="project-container">
+            <img src="images/codepath/instagram.gif" alt="Instagram" width=300>
+            <div class="description">
+              <p>Rather than using the Instagram API, this app involved setting up our own Parse backend to build a new Instagram app from the ground-up, storing our own users and posts in a database. This project taught students how to:</p>
+              <ul>
+                <li>Use Parse authentication to allow users to sign up and log in</li>
+                <li>Take a picture using the Camera app, and adding the photo to the database</li>
+                <li>Implement a <code class="code-name">RecyclerView</code> to show posts on the home screen (do you see a pattern here?)</li>
+                <li>Display each screen in fragments and switch between them within the main activity (using the bottom navigation view)</li>
+              </ul>
+            </div>
+          </div>
+
+        </section>
+
+        <section id="recycler-view">
+          <h1>2. RecyclerView</h1>
+          <p>In this course, the main layout for all our apps was a feed/timeline view, consisting of a <code class="code-name">RecyclerView</code>. This is one of the best options in terms of memory and efficiency when working with large datasets. For the MovieDB API, we displayed a list for the 20 most popular movies, and the Twitter API allowed us to get each tweet in the timeline. But on an Android phone screen, users can only see a few items out of the dataset at a time.</p>
+          <p>Rather than allocating resources in memory for the items not in view, the solution is to only allocate memory and inflate views for the items that are shown on the screen. Then we bind new items to the views that we have already inflated. These views are basically "recycled" (hence the name).</p>
+          <p>Implementing a <code class="code-name">RecyclerView</code> involves creating:</p>
+
+          <ul>
+            <li>A model class for the data</li>
+            <div class="recycler-component">
+              <p>We usually create a class representing the data model being displayed by the <code class="code-name">RecyclerView</code>, such as a Tweet, Email, Contact, etc., which contains fields with the information that will be displayed (username, title, description, etc.).</p>
+              <p>For example, let's make a simple <code class="code-name">Post</code> model that consists of a name, body (basically a tweet), and a profile picture.</p>
+              <pre>
+                <code>
     public class Post {
 
         String name;
@@ -129,20 +132,20 @@
 
         public String getName() { return name; } // put get methods for each field
     }
-              </code>
-            </pre>
-          </div>
-          <li>An XML layout file to represent a single row of the <code class="code-name">RecyclerView</code></li>
-          <div class="recycler-component">
-            <p>Usually, when making a feed view, we use a <code class="code-name">RecyclerView</code> to contain all the items we want to display, such as tweets or e-mails. This involves making an XML layout file to edit how each item looks like. This is where we typically add an <code class="code-name">ImageView</code> and <code class="code-name">TextView</code> (for profile pictures, titles, usernames, descriptions, etc.). The height is usually <code class="code-name">wrap_content</code> so the item is the size of its contents.</p>
-            <p>Here's what a simple post model could look like, with the profile picture in an <code class="code-name">ImageView</code>, and the name and body each in a <code class="code-name">TextView</code>. Setting ids for these is important so we can refer to these in the Java code.</p>
-            <img src="images/codepath/layout-xml.png" alt="layout xml" width=500>
-          </div>
-          <li>An <code class="code-name">Adapter</code> class to bind data to each view in the <code class="code-name">RecyclerView</code></li>
-          <div class="recycler-component">
-            <p>In an <code class="code-name">Adapter</code> class, we usually define an inner <code class="code-name">ViewHolder</code> class, which extends the default class. A <code class="code-name">ViewHolder</code> is a representation of the single row that we just defined. We pass in the <code class="code-name">View</code> for the row item and we define and get each component by their id.</p>
-            <pre>
-              <code>
+                </code>
+              </pre>
+            </div>
+            <li>An XML layout file to represent a single row of the <code class="code-name">RecyclerView</code></li>
+            <div class="recycler-component">
+              <p>Usually, when making a feed view, we use a <code class="code-name">RecyclerView</code> to contain all the items we want to display, such as tweets or e-mails. This involves making an XML layout file to edit how each item looks like. This is where we typically add an <code class="code-name">ImageView</code> and <code class="code-name">TextView</code> (for profile pictures, titles, usernames, descriptions, etc.). The height is usually <code class="code-name">wrap_content</code> so the item is the size of its contents.</p>
+              <p>Here's what a simple post model could look like, with the profile picture in an <code class="code-name">ImageView</code>, and the name and body each in a <code class="code-name">TextView</code>. Setting ids for these is important so we can refer to these in the Java code.</p>
+              <img src="images/codepath/layout-xml.png" alt="layout xml" width=500>
+            </div>
+            <li>An <code class="code-name">Adapter</code> class to bind data to each view in the <code class="code-name">RecyclerView</code></li>
+            <div class="recycler-component">
+              <p>In an <code class="code-name">Adapter</code> class, we usually define an inner <code class="code-name">ViewHolder</code> class, which extends the default class. A <code class="code-name">ViewHolder</code> is a representation of the single row that we just defined. We pass in the <code class="code-name">View</code> for the row item and we define and get each component by their id.</p>
+              <pre>
+                <code>
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvName;
@@ -155,22 +158,22 @@
             tvBody = itemView.findViewById(R.id.tvBody);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
         }
-              </code>
-            </pre>
-            <p>We create the <code class="code-name">bind</code> method in this inner class, which takes in the data to populate each component of the <code class="code-name">ViewHolder</code>.</p>
-            <pre>
-              <code>
+                </code>
+              </pre>
+              <p>We create the <code class="code-name">bind</code> method in this inner class, which takes in the data to populate each component of the <code class="code-name">ViewHolder</code>.</p>
+              <pre>
+                <code>
     public void bind(Post post) {
         tvName.setText(post.getName());
         tvBody.setText(post.getBody());
         // We need to import the Glide library to load in an image
         Glide.with(context).load(post.getProfileImage()).into(ivProfileImage);
     }
-              </code>
-            </pre>
-            <p>The <code class="code-name">Adapter</code> class itself also extends the default class, which is parameterized by the <code class="code-name">ViewHolder</code> that we just defined. Our constructor will have two parameters: a context (the class where the adapter is constructed from), and a list with our data.</p>
-            <pre>
-              <code>
+                </code>
+              </pre>
+              <p>The <code class="code-name">Adapter</code> class itself also extends the default class, which is parameterized by the <code class="code-name">ViewHolder</code> that we just defined. Our constructor will have two parameters: a context (the class where the adapter is constructed from), and a list with our data.</p>
+              <pre>
+                <code>
     public class PostAdapter extends RecyclerView.Adapter&lt;MovieAdapter.ViewHolder&gt; {
 
     Context context;
@@ -180,17 +183,17 @@
         this.context = context;
         this.posts = posts;
     }
-              </code>
-            </pre>
+                </code>
+              </pre>
 
-            <p> Then we implement three required methods:</p>
-            <ul>
-              <li><code class="code-name">onCreateViewHolder</code>: using the inflate method from the <code class="code-name">LayoutInflater</code> class to inflate our layout, put it into a View, wrap it into a ViewHolder, and return it.</li>
-              <li><code class="code-name">onBindViewHolder</code>: this method accepts a position, we go to that position in the list to get the item and call the bind method we defined.</li>
-              <li><code class="code-name">getItemCount</code>: we usually set this as the size of our list with data.</li>
-            </ul>
-            <pre>
-              <code>
+              <p> Then we implement three required methods:</p>
+              <ul>
+                <li><code class="code-name">onCreateViewHolder</code>: using the inflate method from the <code class="code-name">LayoutInflater</code> class to inflate our layout, put it into a View, wrap it into a ViewHolder, and return it.</li>
+                <li><code class="code-name">onBindViewHolder</code>: this method accepts a position, we go to that position in the list to get the item and call the bind method we defined.</li>
+                <li><code class="code-name">getItemCount</code>: we usually set this as the size of our list with data.</li>
+              </ul>
+              <pre>
+                <code>
     // Inflates a layout from XML and returns the holder
     @NonNull
     @Override
@@ -212,14 +215,14 @@
     public int getItemCount() {
         return posts.size();
     }
-              </code>
-            </pre>
-          </div>
-          <li>Setting the adapter on the <code class="code-name">RecyclerView</code></li>
-          <div class="recycler-component">
-            <p>Once we initialize the adapter in our main activity, we set the adapter and a layout manager on the <code class="code-name">RecyclerView</code>. After adding to our list of data, we need to let the adapter know whenever the data changes so that it can re-render the <code class="code-name">RecyclerView</code>.</p>
-            <pre>
-              <code>
+                </code>
+              </pre>
+            </div>
+            <li>Setting the adapter on the <code class="code-name">RecyclerView</code></li>
+            <div class="recycler-component">
+              <p>Once we initialize the adapter in our main activity, we set the adapter and a layout manager on the <code class="code-name">RecyclerView</code>. After adding to our list of data, we need to let the adapter know whenever the data changes so that it can re-render the <code class="code-name">RecyclerView</code>.</p>
+              <pre>
+                <code>
     RecyclerView rvPosts = findViewById(R.id.rvPosts);
 
     // Create adapter
@@ -231,19 +234,19 @@
 
     // Later, after adding to the list of data
     postAdapter.notifyDataSetChanged();
-              </code>
-            </pre>
-          </div>
-        </ul>
-      </section>
+                </code>
+              </pre>
+            </div>
+          </ul>
+        </section>
 
-      <section id="activities-and-fragments">
-        <h1>3. Activities and Fragments</h1>
-        <p>Every screen in an Android app is known as an <code class="code-name">Activity</code>. An <code class="code-name">Activity</code> is a combination of an XML layout file and a Java class.</p>
-        <p>In our apps, the main screen (where the feed usually is) is always referred to as <code class="code-name">MainActivity</code>, but there can be other activities that we have to navigate to. For example, pressing a tweet on your Twitter timeline enlarges the tweet in a new activity. For apps with multiple activities, you can navigate between activities using intents.</p>
-        <p>Let's say we want to press on a post to view it on a separate activity. The new activity is represented by another class. We'll call this <code class="code-name">DetailActivity</code>. We have to register a click listener to the entire post (inside the <code class="code-name">ViewHolder</code> class in <code class="code-name">PostAdapter</code> from the previous example), and then use an intent to navigate to the new activity. We use the <code class="code-name">putExtra</code> method to pass data from one activity to another, using a key-value pair.</p>
-        <pre>
-          <code>
+        <section id="activities-and-fragments">
+          <h1>3. Activities and Fragments</h1>
+          <p>Every screen in an Android app is known as an <code class="code-name">Activity</code>. An <code class="code-name">Activity</code> is a combination of an XML layout file and a Java class.</p>
+          <p>In our apps, the main screen (where the feed usually is) is always referred to as <code class="code-name">MainActivity</code>, but there can be other activities that we have to navigate to. For example, pressing a tweet on your Twitter timeline enlarges the tweet in a new activity. For apps with multiple activities, you can navigate between activities using intents.</p>
+          <p>Let's say we want to press on a post to view it on a separate activity. The new activity is represented by another class. We'll call this <code class="code-name">DetailActivity</code>. We have to register a click listener to the entire post (inside the <code class="code-name">ViewHolder</code> class in <code class="code-name">PostAdapter</code> from the previous example), and then use an intent to navigate to the new activity. We use the <code class="code-name">putExtra</code> method to pass data from one activity to another, using a key-value pair.</p>
+          <pre>
+            <code>
     // Refer to the entire container in the Adapter class
     RelativeLayout container;
     container = itemView.findViewById(R.id.container);
@@ -257,20 +260,20 @@
             context.startActivity(i);
         }
     }
-          </code>
-        </pre>
-        <p>Now we go to the <code class="code-name">DetailActivity</code> and retrieve the data corresponding to the keys.</p>
-        <pre>
-          <code>
+            </code>
+          </pre>
+          <p>Now we go to the <code class="code-name">DetailActivity</code> and retrieve the data corresponding to the keys.</p>
+          <pre>
+            <code>
     String name = getIntent().getStringExtra("name");
     String body = getIntent().getStringExtra("body");
-          </code>
-        </pre>
-        <p>If an app uses a navigation tab to switch between screens, you can put multiple screens in the same activity. Such a screen is known as a <code class="code-name">Fragment</code>.</p>
-        <p>A <code class="code-name">Fragment</code> is a portion of an activity that is embedded within it, and is also a combination of an XML layout file and Java class. There should be a class for each fragment, extending the class <code class="code-name">Fragment</code>. Fragments change the role of activities, as they become navigational containers responsible for presenting fragments.</p>
-        <p>For example, let's say we wanted a new Profile screen, so we create a new <code class="code-name">ProfileFragment</code> class and a fragment_profile.xml file:</p>
-        <pre>
-          <code>
+            </code>
+          </pre>
+          <p>If an app uses a navigation tab to switch between screens, you can put multiple screens in the same activity. Such a screen is known as a <code class="code-name">Fragment</code>.</p>
+          <p>A <code class="code-name">Fragment</code> is a portion of an activity that is embedded within it, and is also a combination of an XML layout file and Java class. There should be a class for each fragment, extending the class <code class="code-name">Fragment</code>. Fragments change the role of activities, as they become navigational containers responsible for presenting fragments.</p>
+          <p>For example, let's say we wanted a new Profile screen, so we create a new <code class="code-name">ProfileFragment</code> class and a fragment_profile.xml file:</p>
+          <pre>
+            <code>
     public class ProfileFragment extends Fragment {
 
         private ImageView ivProfileImage;
@@ -282,7 +285,6 @@
             // Defines the xml file for the fragment
             return inflater.inflate(R.layout.fragment_profile, parent, false);
         }
-
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
             // Setup any handles to view objects here
@@ -290,12 +292,12 @@
             tvDescription = view.findViewById(R.id.tvDescription);
         }
     }
-          </code>
-        </pre>
-        <p>We then use a <code class="code-name">FragmentManager</code> to add the fragment dynamically in our layout. We add a "placeholder" container called a <code class="code-name">FrameLayout</code> to our activity, where the fragment is inserted at runtime.</p>
-        <p>To swap between fragments, we can use a bottom navigation drawer and handle the selection using a switch statement. The <code class="code-name">FragmentManager</code> is responsible for replacing the contents of our <code class="code-name">FrameLayout</code> with the selected fragment. Here's an example with the Instagram app's three fragments (Home, Compose, and Profile):</p>
-        <pre>
-          <code>
+            </code>
+          </pre>
+          <p>We then use a <code class="code-name">FragmentManager</code> to add the fragment dynamically in our layout. We add a "placeholder" container called a <code class="code-name">FrameLayout</code> to our activity, where the fragment is inserted at runtime.</p>
+          <p>To swap between fragments, we can use a bottom navigation drawer and handle the selection using a switch statement. The <code class="code-name">FragmentManager</code> is responsible for replacing the contents of our <code class="code-name">FrameLayout</code> with the selected fragment. Here's an example with the Instagram app's three fragments (Home, Compose, and Profile):</p>
+          <pre>
+            <code>
     bottomNavigationView = findViewById(R.id.bottom_navigation);
 
     bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -320,19 +322,23 @@
         }
     });
 
-    // We can set a default selection right here. It will load this fragment on the app's startup.
-    bottomNavigationView.setSelectedItemId(R.id.action_home);
-          </code>
-        </pre>
-      </section>
+      // We can set a default selection right here. It will load this fragment on the app's startup.
+      bottomNavigationView.setSelectedItemId(R.id.action_home);
+            </code>
+          </pre>
+        </section>
+      </div>
+
     </div>
+
+
 
     <footer id="main-footer">
       <h3>&copy; 2019-2020 Andrew Le.</h3>
     </footer>
 
     <script src="js/smooth-scroll.js"></script>
-    <script src="js/cr-script.js"></script>
+    <script src="js/project-page.js"></script>
 
   </body>
 </html>
