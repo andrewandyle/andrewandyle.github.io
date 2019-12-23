@@ -102,16 +102,15 @@ _C.addEventListener('touchstart', lock, false);
 _C.addEventListener('mouseup', move, false);
 _C.addEventListener('touchend', move, false);
 
-// _C.addEventListener('onclick', plusSlides, false);
-
-function drag(e) {
-  e.preventDefault();
-
-  if(locked)
-    _C.style.setProperty('--tx', `${Math.round(unify(e).clientX - x0)}px`)
-};
-
-_C.addEventListener('mousemove', drag, false);
-_C.addEventListener('touchmove', drag, false);
+// Temporarily removed to test scrolling
+// function drag(e) {
+//   e.preventDefault();
+//
+//   if(locked)
+//     _C.style.setProperty('--tx', `${Math.round(unify(e).clientX - x0)}px`)
+// };
+//
+// _C.addEventListener('mousemove', drag, false);
+// _C.addEventListener('touchmove', drag, false);
 
 function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
