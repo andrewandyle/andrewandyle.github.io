@@ -300,10 +300,6 @@ iframe {
   text-align:center;
 }
 
-.slide-media img {
-  height:300px;
-}
-
 /* the container for the dots to navigate between slides */
 #dot-container {
   text-align:center;
