@@ -254,7 +254,7 @@ body{
   align-items: center;
 
   /* the width of the entire slideshow is determined by the number of slides */
-  --n: 5;
+  --n: 6;
   width: 100%;
   width: calc(var(--n)*100%);
 
@@ -298,6 +298,10 @@ iframe {
 /* center the pictures and videos within the slides */
 .slide-media {
   text-align:center;
+}
+
+.slide-media img {
+  height:300px;
 }
 
 /* the container for the dots to navigate between slides */
