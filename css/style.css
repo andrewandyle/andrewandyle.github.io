@@ -96,14 +96,12 @@ body{
 }
 
 #showcase{
-  display:flex;
+  display:inline-block;
   /* positioning */
   max-height:730px;
-  width:100%;
 
   /* text formatting, this centers the button as well */
-  justify-content:center;
-  align-items:center;
+  text-align:center;
 }
 
 .showcase-slideshow {
@@ -140,9 +138,7 @@ body{
 
 .showcase-items {
   margin-top:5%;
-  top:20px;
   position:absolute;
-  text-align:center;
   z-index:2;
 }
 
