@@ -255,7 +255,7 @@ body{
   align-items: center;
 
   /* the width of the entire slideshow is determined by the number of slides */
-  --n: 6;
+  --n: 4;
   width: 100%;
   width: calc(var(--n)*100%);
 
