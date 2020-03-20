@@ -175,6 +175,7 @@ body{
 .button:hover{
   /* style and colors */
   background:red;
+  color:#fff;
 }
 
 /* Next two components are part of my container for About Me. */
@@ -383,77 +384,6 @@ iframe {
 
 .ext-link:visited{
   color:#ff00ff;
-}
-
-#comments-title {
-  text-align:center;
-  font-size:40px;
-  color:#fff;
-}
-
-#comments-section h3 {
-  color:#fff;
-  margin-left:20px;
-  font-size:24px;
-  font-weight:100;
-  margin-bottom:-1px;
-}
-
-textarea {
-  background-color:#444;
-  resize:none;
-  margin-left:20px;
-  font-size:24px;
-  font-weight:100;
-  color:#fff;
-  border:2px #fff solid;
-}
-
-#user-box {
-  width:400px;
-  height:35px;
-}
-
-#message-box {
-  width:70%;
-  height:160px;
-}
-
-#comment-submit {
-  width:100px;
-  height:35px;
-  background-color:#282828;
-  border:none;
-  color:#fff;
-  font-size:24px;
-  font-weight:400;
-  cursor:pointer;
-  margin-bottom:30px;
-  margin-left:20px;
-  margin-top:10px;
-}
-
-#comment-submit:hover {
-  background:red;
-}
-
-.comment-box {
-  color:#fff;
-  width:80%;
-  padding:20px;
-  margin-left:20px;
-  margin-bottom:10px;
-  border:4px #fff solid;
-}
-
-.comment-box p {
-  font-size:24px;
-  line-height:20px;
-  font-weight:100;
-}
-
-#comment-info {
-  color:yellow;
 }
 
 #main-footer{
