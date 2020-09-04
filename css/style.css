@@ -1,19 +1,19 @@
 @font-face {
-  font-family:'p5hatty';
-  src: url("../assets/p5hatty.eot"); /* IE9 Compat Modes */
-  src: url("../assets/p5hatty.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-       url("../assets/p5hatty.otf") format("opentype"), /* Open Type Font */
-       url("../assets/p5hatty.svg") format("svg"), /* Legacy iOS */
-       url("../assets/p5hatty.ttf") format("truetype"), /* Safari, Android, iOS */
-       url("../assets/p5hatty.woff") format("woff"), /* Modern Browsers */
-       url("../assets/p5hatty.woff2") format("woff2"); /* Modern Browsers */
+  font-family:'Optima nova LT';
+  src: url("../assets/Optima nova LT Black.eot"); /* IE9 Compat Modes */
+  src: url("../assets/Optima nova LT Black.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+       url("../assets/Optima nova LT Black.otf") format("opentype"), /* Open Type Font */
+       url("../assets/Optima nova LT Black.svg") format("svg"), /* Legacy iOS */
+       url("../assets/Optima nova LT Black.ttf") format("truetype"), /* Safari, Android, iOS */
+       url("../assets/Optima nova LT Black.woff") format("woff"), /* Modern Browsers */
+       url("../assets/Optima nova LT Black.woff2") format("woff2"); /* Modern Browsers */
   font-style:normal;
   font-weight:100;
 }
 
 /* the entire page uses the Persona 5 font */
 * {
-  font-family:'p5hatty', sans-serif;
+  font-family:'Optima nova LT', sans-serif;
 }
 
 /* the body of the entire page */
@@ -82,7 +82,7 @@ body{
   /* text formatting */
   text-decoration: none;
   font-size:36px;
-  line-height: 2em;
+  line-height: 1.75em;
 }
 
 /* every link in the navigation bar is evenly spaced, and glows when hovered over */
@@ -148,8 +148,7 @@ body{
   color:#fff;
 
   /* text formatting */
-  font-family: 'Audiowide', cursive;
-  font-size:25px;
+  font-size:32px;
   line-height: 1.6em;
 }
 
@@ -204,7 +203,7 @@ body{
   /* positioning */
   margin-top:30px;
   float:right;
-  width:200px;
+  width:300px;
 }
 
 #personal-life {
