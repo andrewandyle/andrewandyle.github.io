@@ -417,12 +417,6 @@ iframe {
   #avi{
     float:left;
   }
-  iframe {
-    -ms-zoom: 0.75;
-    -moz-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    -webkit-transform: scale(0.75);
-  }
   #projects li{
     padding-right:30px;
   }
