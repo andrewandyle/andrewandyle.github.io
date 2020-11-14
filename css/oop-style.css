@@ -200,3 +200,8 @@ p {
     width: 90%;
   }
 }
+
+hr {
+  margin-block-start: 4em;
+  margin-block-end: 4em;
+}
